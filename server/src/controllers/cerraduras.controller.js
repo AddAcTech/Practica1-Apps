@@ -1,5 +1,6 @@
 export const estrella = async (req, res) => {
   let num = req.params.n;
+  console.log(num);
   num = parseInt(num);
   let array = Array(num);
   for (let i = 0; i < array.length; i++) {
