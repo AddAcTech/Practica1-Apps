@@ -23,6 +23,7 @@ export const estrella = async (req, res) => {
 
   array = generateKleeneLock(num);
   array.unshift("λ");
+  console.log(array);
   res.json(array);
 };
 
@@ -49,5 +50,6 @@ export const suma = async (req, res) => {
   };
 
   array = generateKleeneLock(num);
-  res.json(array);
+  console.log(array);
+  return res.json(array);
 };

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Data from "./components/Data";
 
 function App() {
-  const [data, setData] = useState();
-  const [strings, setStrings] = useState();
+  const [data, setData] = useState(0);
+  const [strings, setStrings] = useState([]);
 
   function handleChange(e) {
     setData(e.target.value);
@@ -17,6 +17,7 @@ function App() {
         );
         const responseJson = await response.json();
         setStrings(responseJson);
+        console.log(responseJson);
       };
       getData();
     } catch (error) {
