@@ -25,13 +25,27 @@ function App() {
   }
 
   return (
-    <div className="text-3xl font bold">
-      <h1>Bienvenido</h1>
-      <input type="text" onChange={handleChange} className="border broder-1" />
-      <button onClick={() => sendRequest("cerradura")}>Cerradura Kleene</button>
-      <button onClick={() => sendRequest("positiva")}>
-        Cerradura Positiva
-      </button>
+    <div className="text-3xl font bold w-screen flex flex-col items-center gap-2">
+      <h1 className="font-bold font-sans text-3xl">Bienvenido</h1>
+      <input
+        type="number"
+        onChange={handleChange}
+        className="border rounded-md px-2 w-28"
+      />
+      <div className="flex flex-col gap-2 sm:flex-row p-2">
+        <button
+          onClick={() => sendRequest("cerradura")}
+          className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+        >
+          Cerradura Kleene
+        </button>
+        <button
+          onClick={() => sendRequest("cerradura/suma")}
+          className="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-green-500 rounded"
+        >
+          Cerradura Positiva
+        </button>
+      </div>
       <Data strings={strings} />
     </div>
   );
