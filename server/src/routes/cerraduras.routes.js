@@ -3,7 +3,7 @@ import { estrella, suma } from "../controllers/cerraduras.controller.js";
 
 const router = Router();
 
-router.get("/cerradura/:n", estrella);
-router.get("/cerradura/suma/:n", suma);
+router.get("/api/cerradura/estrella/:n", estrella);
+router.get("/api/cerradura/positiva/:n", suma);
 
 export default router;
