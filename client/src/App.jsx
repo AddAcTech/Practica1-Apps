@@ -13,7 +13,7 @@ function App() {
     try {
       const getData = async () => {
         const response = await fetch(
-          `http://localhost:3000/${cerradura}/${data}`
+          `http://localhost:3000/api/${cerradura}/${data}`
         );
         const responseJson = await response.json();
         setStrings(responseJson);
@@ -35,13 +35,13 @@ function App() {
       />
       <div className="flex flex-col gap-2 sm:flex-row p-2">
         <button
-          onClick={() => sendRequest("cerradura")}
+          onClick={() => sendRequest("cerradura/estrella")}
           className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
         >
           Cerradura Kleene
         </button>
         <button
-          onClick={() => sendRequest("cerradura/suma")}
+          onClick={() => sendRequest("cerradura/positiva")}
           className="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-green-500 rounded"
         >
           Cerradura Positiva
