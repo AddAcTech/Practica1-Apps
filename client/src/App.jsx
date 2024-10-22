@@ -10,6 +10,11 @@ function App() {
   }
 
   function sendRequest(cerradura) {
+    if (e.target.name=="num" && e.target.value<= 0){
+      e.target.value=""
+      alert("El numero tiene que ser mayor a 0")
+      return 
+    }
     try {
       const getData = async () => {
         const response = await fetch(
@@ -29,6 +34,7 @@ function App() {
     <div className="text-3xl font bold w-screen flex flex-col items-center gap-2">
       <h1 className="font-bold font-sans text-3xl">Bienvenido</h1>
       <input
+      name="num"
         type="number"
         onChange={handleChange}
         className="border rounded-md px-2 w-28"
