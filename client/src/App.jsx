@@ -6,15 +6,17 @@ function App() {
   const [strings, setStrings] = useState([]);
 
   function handleChange(e) {
-    setData(e.target.value);
-  }
-
-  function sendRequest(cerradura) {
     if (e.target.name=="num" && e.target.value<= 0){
       e.target.value=""
       alert("El numero tiene que ser mayor a 0")
       return 
     }
+    setData(e.target.value);
+    
+  }
+
+  function sendRequest(cerradura) {
+    
     try {
       const getData = async () => {
         const response = await fetch(
